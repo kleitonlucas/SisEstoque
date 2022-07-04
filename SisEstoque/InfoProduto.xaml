@@ -1,0 +1,23 @@
+﻿<Window x:Class="SisEstoque.InfoProduto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SisEstoque"
+        mc:Ignorable="d"
+        Title="InfoProduto" Height="434.04" Width="624">
+    <Grid>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="254,113,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="312,117,0,0" TextWrapping="Wrap" Text="{Binding Nome}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Marca" HorizontalAlignment="Left" Margin="254,144,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="312,148,0,0" TextWrapping="Wrap" Text="{Binding Marca}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Categoria" HorizontalAlignment="Left" Margin="236,175,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="312,179,0,0" TextWrapping="Wrap" Text="{Binding Categoria}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Preço" HorizontalAlignment="Left" Margin="257,206,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="312,210,0,0" TextWrapping="Wrap" Text="{Binding Preco}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Quantidade" HorizontalAlignment="Left" Margin="224,237,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="312,241,0,0" TextWrapping="Wrap" Text="{Binding Quantidade}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Informações de cadastro do produto" HorizontalAlignment="Left" Margin="199,65,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button Content="Salvar" HorizontalAlignment="Left" Margin="312,291,0,0" VerticalAlignment="Top" Width="76" Click="bnt_Salvar"/>
+    </Grid>
+</Window>
