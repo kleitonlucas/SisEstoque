@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SisEstoque
 {
-    public class Produto
+    public class Produto : ICloneable, INotifyPropertyChanged
     {
         private int codigo;
         private string nome;
@@ -35,32 +36,62 @@ namespace SisEstoque
         public int Codigo
         {
             get { return codigo; }
-            set { codigo = value; }
+            set { 
+                codigo = value;
+                Notifica("Codigo");
+            }
         }
         public string Nome
         {
             get { return nome; }
-            set { nome = value; }
+            set { 
+                nome = value;
+                Notifica("Nome");
+            }
         }
         public string Marca
         {
             get { return marca; }
-            set { marca = value; }
+            set { 
+                marca = value;
+                Notifica("Marca");
+            }
         }
         public string Categoria
         {
             get { return categoria; }
-            set { categoria = value; }
+            set { 
+                categoria = value;
+                Notifica("Categoria");
+            }
         }
         public float Preco
         {
             get { return preco; }
-            set { preco = value; }
+            set { 
+                preco = value;
+                Notifica("Preco");
+            }
         }
         public int Quantidade
         {
             get { return quantidade; }
-            set { quantidade = value; }
+            set { 
+                quantidade = value;
+                Notifica("Quantidade");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void Notifica(string propriedade)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propriedade));
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }
