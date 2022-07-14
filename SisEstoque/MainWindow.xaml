@@ -11,7 +11,7 @@
             <RowDefinition Height="94*"/>
             <RowDefinition Height="123*"/>
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding listaProdutos}" SelectedItem="{Binding produtoSelecionado}" HorizontalAlignment="Left" Height="318" Margin="44,70,0,0" VerticalAlignment="Top" Width="344" Grid.RowSpan="2">
+        <ListView ItemsSource="{Binding listaProdutos}" SelectedItem="{Binding ProdutoSelecionado}" HorizontalAlignment="Left" Height="318" Margin="44,70,0,0" VerticalAlignment="Top" Width="344" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Codigo}"/>
@@ -24,9 +24,17 @@
             </ListView.View>
         </ListView>
         <Button Content="Adicionar" Command="{Binding Adicionar}" IsEnabled="True" HorizontalAlignment="Left" Margin="451,96,0,0" VerticalAlignment="Top" Width="69" Grid.Row="1"/>
-        <Button Content="Editar" Command="{Binding Editar}" IsEnabled="{Binding buttonstIsEnable}" HorizontalAlignment="Left" Margin="451,137,0,0" VerticalAlignment="Top" Width="69" Grid.Row="1"/>
-        <Button Content="Remover" Command="{Binding Remover}" IsEnabled="{Binding buttonstIsEnable}" HorizontalAlignment="Left" Margin="451,178,0,0" Grid.Row="1" VerticalAlignment="Top" Width="69"/>
+        <Button Content="Editar" Command="{Binding Editar}" IsEnabled="{Binding ButtonstIsEnable}" HorizontalAlignment="Left" Margin="451,137,0,0" VerticalAlignment="Top" Width="69" Grid.Row="1"/>
+        <Button Content="Remover" Command="{Binding Remover}" IsEnabled="{Binding ButtonstIsEnable}" HorizontalAlignment="Left" Margin="451,178,0,0" Grid.Row="1" VerticalAlignment="Top" Width="69"/>
         <Label Content="Estoque de produtos" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Mudar" Command="{Binding Mudar}" HorizontalAlignment="Left" Margin="485,158,0,0" VerticalAlignment="Top" Width="63"/>
+        <ListView ItemsSource="{Binding Bd.Bds}" SelectedIndex="{Binding BdSelecionado}" HorizontalAlignment="Left" Height="68" Margin="430,70,0,0" VerticalAlignment="Top" Width="173">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Nome}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>

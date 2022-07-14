@@ -45,3 +45,5 @@ C:\Users\kleit\Documents\Treinamento-Luz\projetos-wpf\SisEstoque\SisEstoque\bin\
 C:\Users\kleit\Documents\Treinamento-Luz\projetos-wpf\SisEstoque\SisEstoque\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\kleit\Documents\Treinamento-Luz\projetos-wpf\SisEstoque\SisEstoque\bin\Debug\System.ValueTuple.xml
 C:\Users\kleit\Documents\Treinamento-Luz\projetos-wpf\SisEstoque\SisEstoque\obj\Debug\SisEstoque.csproj.CopyComplete
+C:\Users\kleit\Documents\Treinamento-Luz\projetos-wpf\SisEstoque\SisEstoque\bin\Debug\MySqlConnector.dll
+C:\Users\kleit\Documents\Treinamento-Luz\projetos-wpf\SisEstoque\SisEstoque\bin\Debug\MySqlConnector.xml
