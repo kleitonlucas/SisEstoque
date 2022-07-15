@@ -17,6 +17,12 @@ namespace SisEstoque
             this.bds = new List<IBancoDeDados>();
             carregarBDs();
         }
+        public BancoDeDados(IBancoDeDados ibd)
+        {
+            currentBD = 0;
+            this.bds = new List<IBancoDeDados>();
+            this.bds.Add(ibd);
+        }
 
         public List<IBancoDeDados> Bds
         {
@@ -41,15 +47,12 @@ namespace SisEstoque
         }
 
         public Produto select(int codigo)
-        {            
+        {           
             return bds[currentBD].select(codigo);
         }
 
         public bool insert(Produto produto)
         {
-            if (!codigoCadastrado(produto.Codigo))
-                return false;
-            
             return bds[currentBD].insert(produto);
         }
 

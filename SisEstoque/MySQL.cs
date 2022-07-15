@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SisEstoque
 {
-    internal class MySQL : IBancoDeDados
+    public class MySQL : IBancoDeDados
     {
         private string nome;
         private string conexaoString = "Server=localhost;Port=3306;UID=root;Password=mysql;Database=sisestoque";

@@ -12,27 +12,13 @@ namespace SisEstoque
     public class MainWindowVM : INotifyPropertyChanged
     {
         public ObservableCollection<Produto> listaProdutos { get; set; }
-        //public ConexaoBD Conexao { get; private set; }
         private Produto produtoSelecionado;
         private int bdSelecionado;
         private bool buttonstIsEnable;
-
-        //Apenas teste
-        //public Postgres postgres { get; set; }
-        //private MySQL mysql;
         private BancoDeDados bd;
-
-        /* Esconder detalhes dos BDs da mainWindow
-         * 
-         */
 
         public MainWindowVM()
         {
-            //Conexao = new ConexaoBD();
-            //postgres = new Postgres();
-            //mysql = new MySQL();
-            //listaProdutos = new ObservableCollection<Produto>(postgres.select());//(Conexao.todosProdutos());//Retornar o que já tem na tabela produto
-            //listaProdutos = new ObservableCollection<Produto>(mysql.select());
             IniciaComandos();
             bd = new BancoDeDados();
             listaProdutos = new ObservableCollection<Produto>(bd.select());
@@ -78,19 +64,12 @@ namespace SisEstoque
 
                 if(telaInfoCadastro.DialogResult == true)
                 {
-                    //Conexao.inserir(produto.Codigo, produto.Nome, produto.Marca,
-                    //                produto.Categoria, produto.Preco, produto.Quantidade);
-                    //postgres.insert(produto);
-                    //mysql.insert(produto);
                     Bd.insert(produto);
-                    listaProdutos.Add(produto);//Quero que ele faça outro select
+                    listaProdutos.Add(produto);
                 }
             });
             Remover = new RelayCommand((object param) =>
             {
-                //Conexao.excluir(produtoSelecionado.Codigo);
-                //postgres.delete(produtoSelecionado);
-                //mysql.delete(ProdutoSelecionado);
                 Bd.delete(ProdutoSelecionado);
                 listaProdutos.Remove(ProdutoSelecionado);
             });
@@ -104,11 +83,6 @@ namespace SisEstoque
 
                 if(telaInfoCadastro.DialogResult == true)
                 {
-                    //Conexao.atualizar(produtoAtualizado.Codigo, produtoAtualizado.Nome,
-                    //        produtoAtualizado.Marca, produtoAtualizado.Categoria, 
-                    //        produtoAtualizado.Preco, produtoAtualizado.Quantidade);
-                    //postgres.update(produtoAtualizado);
-                    //mysql.update(produtoAtualizado);
                     Bd.update(produtoAtualizado);
                     ProdutoSelecionado.Nome = produtoAtualizado.Nome;
                     ProdutoSelecionado.Marca = produtoAtualizado.Marca;

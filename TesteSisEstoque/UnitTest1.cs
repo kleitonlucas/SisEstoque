@@ -21,6 +21,7 @@ namespace TesteSisEstoque
 
             Assert.IsNotNull(listaTeste);
         }
+        [Test]
         public void TestarPostgresSelectTodos()
         {
             BancoDeDados bd = new BancoDeDados();
